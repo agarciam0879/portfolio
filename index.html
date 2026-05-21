@@ -119,12 +119,12 @@
     <!-- ================= END SEO & GEO ================= -->
 
     <!-- ================= GOOGLE ANALYTICS 4 ================= -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGEYE2WV0C"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5G7CDNSXQ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-GGEYE2WV0C', {
+      gtag('config', 'G-P5G7CDNSXQ', {
         page_title: document.title,
         page_location: window.location.href
       });
@@ -149,6 +149,12 @@
         document.querySelectorAll('a[href*="linkedin.com"]').forEach(function(link) {
           link.addEventListener('click', function() {
             gtag('event', 'linkedin_click', { event_category: 'social', event_label: 'linkedin_profile' });
+          });
+        });
+        // Tracking Event para el Calendario
+        document.querySelectorAll('a[href*="calendar.google.com"]').forEach(function(link) {
+          link.addEventListener('click', function() {
+            gtag('event', 'calendar_click', { event_category: 'contact', event_label: 'book_appointment' });
           });
         });
         var contactForm = document.getElementById('contactForm');
@@ -273,7 +279,7 @@
     <section id="hero" class="relative min-h-screen flex items-center px-6 md:px-12 pt-24 md:pt-20">
         <div class="absolute inset-0 bg-[url('assets/grid-bg.svg')] bg-center opacity-10 z-0 pointer-events-none"></div>
         <div class="relative z-10 max-w-7xl mx-auto w-full flex flex-col-reverse lg:flex-row items-center gap-12">
-            <div class="lg:w-3/5 text-center lg:text-left">
+            <div class="lg:w-3/5 text-center lg:text-left w-full">
                 <h2 class="text-sm font-semibold tracking-widest uppercase text-brand-metal mb-4">Alejandro García Marulanda</h2>
                 <h1 class="font-display font-black text-5xl md:text-7xl leading-tight mb-8 tracking-tighter uppercase">
                     <span class="lang-es">Arquitecto de Operaciones <br /><span class="text-brand-midnight">Data-Driven.</span></span>
@@ -283,13 +289,20 @@
                     <span class="lang-es">Diseño sistemas empresariales que convierten datos en decisiones y decisiones en resultados sostenibles. 24 años liderando operaciones, Business Intelligence e IA aplicada en LATAM.</span>
                     <span class="lang-en">I design business systems that convert data into decisions, and decisions into sustainable results. 24 years leading operations, Business Intelligence, and applied AI in LATAM.</span>
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <!-- Solución Punto 1: text-center forzado en los enlaces del botón -->
-                    <a href="#contact" class="inline-flex justify-center items-center px-8 py-4 bg-brand-black text-white font-medium uppercase tracking-widest text-sm hover:bg-brand-midnight transition-colors swiss-border text-center">
-                        <span class="lang-es">Iniciar Conversación Estratégica</span><span class="lang-en">Start Strategic Conversation</span>
+                
+                <!-- Ajuste exacto: Botones en grid de 3 columnas del mismo tamaño -->
+                <div class="grid grid-cols-3 gap-2 sm:gap-4 w-full max-w-2xl mx-auto lg:mx-0 mt-4">
+                    <a href="#contact" class="flex justify-center items-center px-2 py-3 md:py-4 bg-brand-black text-white font-medium uppercase tracking-tighter md:tracking-widest text-[9px] sm:text-xs md:text-sm hover:bg-brand-midnight transition-colors swiss-border text-center leading-tight">
+                        <span class="lang-es">Iniciar Conversación<br>Estratégica</span>
+                        <span class="lang-en">Start Strategic<br>Conversation</span>
                     </a>
-                    <a href="#projects" class="inline-flex justify-center items-center px-8 py-4 bg-transparent text-brand-black font-medium uppercase tracking-widest text-sm hover:bg-gray-50 transition-colors swiss-border text-center">
-                        <span class="lang-es">Ver Casos de Éxito</span><span class="lang-en">View Success Cases</span>
+                    <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1aWOzhxhuy-4qZmgAzVmKrDnwbaArsZ-HTDPdYUpPrhMGL5hkT1BeK5J3SZwmIfQBRmOJftFcz?gv=true" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center px-2 py-3 md:py-4 bg-white text-brand-black font-medium uppercase tracking-tighter md:tracking-widest text-[9px] sm:text-xs md:text-sm hover:bg-gray-50 transition-colors swiss-border text-center leading-tight">
+                        <span class="lang-es">Agendar Sesión<br>Estratégica</span>
+                        <span class="lang-en">Schedule Strategic<br>Session</span>
+                    </a>
+                    <a href="#projects" class="flex justify-center items-center px-2 py-3 md:py-4 bg-transparent text-brand-black font-medium uppercase tracking-tighter md:tracking-widest text-[9px] sm:text-xs md:text-sm hover:bg-gray-50 transition-colors swiss-border text-center leading-tight">
+                        <span class="lang-es">Ver Casos<br>de Éxito</span>
+                        <span class="lang-en">View Success<br>Cases</span>
                     </a>
                 </div>
             </div>
@@ -529,7 +542,6 @@
             
             <div class="lg:w-2/3 border-t-2 border-black">
                 
-                <!-- Solución Punto 3: Se separó el texto del ícono "+" usando un contenedor flex-1 y flex-shrink-0 para el ícono -->
                 <!-- Job 1 -->
                 <details class="group border-b border-gray-300 bg-white" open>
                     <summary class="cursor-pointer py-6 md:px-2 flex flex-row items-start sm:items-center justify-between select-none hover:bg-gray-50 transition-colors gap-4">
@@ -980,7 +992,7 @@
     <section id="contact" class="py-24 px-6 md:px-12 bg-brand-black text-white">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16">
             <div class="md:w-1/2">
-                <!-- Solución Punto 2: Break-words en el título y ajuste de tamaño sm -->
+                <!-- Break-words en el título y ajuste de tamaño sm -->
                 <h2 class="font-display font-black text-3xl sm:text-4xl md:text-6xl uppercase tracking-tight mb-8 break-words">
                     <span class="lang-es">Iniciemos<br>la conversación.</span><span class="lang-en">Let's start<br>the conversation.</span>
                 </h2>
@@ -992,11 +1004,22 @@
                 </p>
                 
                 <div class="space-y-6">
+                    <!-- Nueva sección para Agenda Directa -->
+                    <div>
+                        <p class="text-sm font-bold tracking-widest text-gray-500 uppercase mb-1">
+                            <span class="lang-es">Agenda Ejecutiva</span><span class="lang-en">Executive Agenda</span>
+                        </p>
+                        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1aWOzhxhuy-4qZmgAzVmKrDnwbaArsZ-HTDPdYUpPrhMGL5hkT1BeK5J3SZwmIfQBRmOJftFcz?gv=true" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-lg md:text-xl font-light hover:text-brand-metal transition-colors">
+                            <span class="lang-es">Reservar Espacio (30 min)</span>
+                            <span class="lang-en">Book a Slot (30 min)</span>
+                            <svg class="w-5 h-5 ml-3 text-brand-metal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        </a>
+                    </div>
                     <div>
                         <p class="text-sm font-bold tracking-widest text-gray-500 uppercase mb-1">
                             <span class="lang-es">Email Directo</span><span class="lang-en">Direct Email</span>
                         </p>
-                        <!-- Solución Punto 2: break-all y reducción ligera en móvil para que no se corte -->
+                        <!-- Break-all y reducción ligera en móvil para que no se corte -->
                         <a href="mailto:alejandrogarciamarulanda@outlook.com" class="text-lg md:text-xl font-light hover:text-brand-metal transition-colors break-all">alejandrogarciamarulanda@outlook.com</a>
                     </div>
                     <div>
@@ -1252,4 +1275,3 @@
     </script>
 </body>
 </html>
-
